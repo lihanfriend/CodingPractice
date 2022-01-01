@@ -5,6 +5,7 @@ namespace lihancode
 {
     class Program
     {
+        const int ASCII_ZERO = 48;
         static bool CheckStringIsNum(string num)
         {
             foreach(char c in num.ToCharArray()) 
@@ -54,11 +55,11 @@ namespace lihancode
                 int result = i1 + i2 + carry;
                 int ones =  result % 10;
                 carry = result / 10;
-                resultCharList.Add((char)(ones + 48));
+                resultCharList.Add((char)(ones + ASCII_ZERO));
             }
             if (carry != 0)
             {
-                resultCharList.Add((char)(carry + 48));
+                resultCharList.Add((char)(carry + ASCII_ZERO));
             }
             string retResult = new string(resultCharList.ToArray());
             string retReversedResult = new string(ReverseString(retResult));
